@@ -4,6 +4,7 @@ public class GameController {
     private Background background;
     private BulletController bulletController;
     private Hero hero;
+    private Asteroid asteroid;
 
     public BulletController getBulletController() {
         return bulletController;
@@ -17,16 +18,22 @@ public class GameController {
         return background;
     }
 
+    public Asteroid getAsteroid() {
+        return asteroid;
+    }
+
     public GameController() {
         this.background = new Background(this);
         this.hero = new Hero(this);
         this.bulletController = new BulletController();
+        this.asteroid = new Asteroid();
     }
 
     public void update(float dt) {
         background.update(dt);
         hero.update(dt);
         bulletController.update(dt);
+        asteroid.update(dt);
         checkCollisions();
     }
 
