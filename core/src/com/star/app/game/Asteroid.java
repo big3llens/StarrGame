@@ -58,6 +58,7 @@ public class Asteroid implements Poolable {
 
     public void deactivate() {
         active = false;
+
     }
 
     public void activate(float x, float y, float vx, float vy, float scale) {
